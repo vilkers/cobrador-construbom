@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f8fafc;
+}
+
+html,
+body {
+  background-color: var(--bg);
+  color: #0f172a;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Esconde scrollbar horizontal de chips em telas pequenas */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
