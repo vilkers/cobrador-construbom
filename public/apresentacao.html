@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Cobrança Construbom — Apresentação</title>
+<style>
+  :root{
+    --brand:#0A4C9E; --brand-dark:#07347A; --accent:#F5B700;
+    --verde:#16A34A; --amarelo:#F59E0B; --vermelho:#DC2626;
+    --bg:#0b1f3a; --card:#ffffff; --ink:#0f172a; --muted:#64748b;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:linear-gradient(160deg,#07347A,#0A4C9E 55%,#0b1f3a);
+    color:var(--ink);overflow:hidden;
+  }
+  .deck{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:18px}
+  .slide{
+    display:none;width:100%;max-width:560px;max-height:100%;overflow-y:auto;
+    background:var(--card);border-radius:22px;padding:30px 26px 34px;
+    box-shadow:0 24px 60px rgba(0,0,0,.35);animation:in .35s ease;
+  }
+  .slide.active{display:block}
+  @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+  .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--brand);background:#eef5ff;padding:6px 12px;border-radius:999px;margin-bottom:14px}
+  h1{font-size:26px;line-height:1.18;color:var(--ink);margin-bottom:12px}
+  h2{font-size:23px;line-height:1.2;color:var(--ink);margin-bottom:14px}
+  p{font-size:16px;line-height:1.55;color:#334155;margin-bottom:12px}
+  .lead{font-size:17px;color:#1e293b}
+  ul{list-style:none;margin:8px 0 4px}
+  li{font-size:16px;line-height:1.5;color:#334155;padding:9px 0 9px 30px;position:relative;border-bottom:1px solid #f1f5f9}
+  li:last-child{border-bottom:0}
+  li::before{content:"";position:absolute;left:4px;top:15px;width:9px;height:9px;border-radius:3px;background:var(--accent)}
+  li.check::before{content:"✓";background:none;color:var(--verde);font-weight:900;left:2px;top:8px;font-size:17px}
+
+  .logo{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+  .mark{width:46px;height:46px;border-radius:13px;background:var(--brand);color:var(--accent);
+    font-weight:900;font-size:24px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(10,76,158,.4)}
+  .logo small{display:block;color:var(--muted);font-size:12px;font-weight:600}
+  .logo b{font-size:16px;color:var(--ink)}
+
+  .quote{background:#0b1f3a;color:#e2e8f0;border-radius:16px;padding:18px 18px 16px;font-size:15px;line-height:1.55;
+    border-left:4px solid var(--accent);margin:6px 0 16px}
+  .quote .who{display:block;color:#94a3b8;font-size:12px;margin-bottom:8px;font-weight:600}
+  .quote em{color:#fff;font-style:normal}
+
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+  .tile{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:14px}
+  .tile .big{font-size:22px;font-weight:800;color:var(--brand)}
+  .tile .lbl{font-size:13px;color:var(--muted);margin-top:2px}
+
+  .dots{display:flex;gap:8px;align-items:center;margin:16px 0 2px}
+  .d{width:10px;height:10px;border-radius:50%;background:#e2e8f0}
+  .d.v{background:var(--verde)} .d.a{background:var(--amarelo)} .d.r{background:var(--vermelho)}
+  .tagline{font-size:13px;color:var(--muted);margin-top:4px}
+
+  .cta{display:block;text-align:center;background:var(--accent);color:var(--brand-dark);
+    font-weight:800;text-decoration:none;padding:14px;border-radius:14px;margin-top:10px;font-size:16px}
+  .pill{display:inline-block;background:#eef5ff;color:var(--brand);font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px;margin:3px 4px 0 0}
+
+  /* nav */
+  .nav{position:fixed;left:0;right:0;bottom:14px;display:flex;align-items:center;justify-content:center;gap:14px;z-index:10}
+  .nav button{border:0;background:rgba(255,255,255,.16);color:#fff;width:46px;height:46px;border-radius:50%;
+    font-size:20px;backdrop-filter:blur(6px);cursor:pointer}
+  .nav button:active{background:rgba(255,255,255,.3)}
+  .counter{color:#cbd5e1;font-size:13px;font-weight:600;min-width:46px;text-align:center}
+  .progress{position:fixed;top:0;left:0;height:4px;background:var(--accent);transition:width .3s;z-index:11}
+  .hint{position:fixed;top:12px;right:14px;color:rgba(255,255,255,.55);font-size:12px;z-index:10}
+</style>
+</head>
+<body>
+<div class="progress" id="bar"></div>
+<div class="hint">deslize ou use as setas →</div>
+
+<div class="deck" id="deck">
+
+  <!-- 1 — O PEDIDO + O PROBLEMA -->
+  <section class="slide active">
+    <span class="kicker">Como nasceu</span>
+    <h1>Um pedido em linguagem natural ao Claude</h1>
+    <p class="lead">Tudo começou com uma conversa. Sem escrever código — só explicando o problema da loja:</p>
+    <div class="quote">
+      <span class="who">🗣️ O pedido (resumido)</span>
+      <em>“Quero um app que ajude minha sogra a administrar as dívidas e cobranças dos clientes da loja. Cada cliente tem um jeito de cobrar, um dia, um tom. Quero fichas por cliente, classificar por cor quem paga bem e quem enrola, e tirar a mensagem pronta pra mandar no WhatsApp.”</em>
+    </div>
+    <p style="font-weight:700;color:#0f172a;margin-bottom:6px">O problema a resolver:</p>
+    <ul>
+      <li>A loja vende <b>fiado</b> e cada cliente é um caso (dia, frequência e tom de cobrança diferentes)</li>
+      <li>As cobranças são <b>manuais, espalhadas</b> e dependem da memória</li>
+      <li>Falta <b>visibilidade</b>: quanto há a receber, quem está atrasado, quem cobrar hoje</li>
+    </ul>
+  </section>
+
+  <!-- 2 — A SOLUÇÃO -->
+  <section class="slide">
+    <div class="logo">
+      <div class="mark">C</div>
+      <div><b>Cobrança Construbom</b><small>Rede Construbom · assistente de cobranças</small></div>
+    </div>
+    <h2>Um assistente de cobranças num só lugar</h2>
+    <p>Cada cliente vira uma <b>ficha</b> com a forma certa de cobrar. O app organiza, lembra e escreve a mensagem por você.</p>
+    <div class="grid">
+      <div class="tile"><div class="big">📇</div><div class="lbl">Fichas por cliente</div></div>
+      <div class="tile"><div class="big">🚦</div><div class="lbl">Classificação por cor</div></div>
+      <div class="tile"><div class="big">💬</div><div class="lbl">Mensagem pronta</div></div>
+      <div class="tile"><div class="big">📊</div><div class="lbl">Visão do dinheiro</div></div>
+    </div>
+    <p class="tagline" style="margin-top:14px">Feito para o celular — do jeito que ela já trabalha.</p>
+  </section>
+
+  <!-- 3 — FICHA + SEMÁFORO -->
+  <section class="slide">
+    <span class="kicker">O coração do app</span>
+    <h2>A ficha do cliente</h2>
+    <p>Toda a personalização da cobrança fica registrada:</p>
+    <ul>
+      <li><b>Dia e frequência</b> (semanal, quinzenal, mensal ou sob demanda)</li>
+      <li><b>Canal e tom</b> (WhatsApp, ligação · amigável, lembrete ou firme)</li>
+      <li><b>Compras e dívidas</b>, com saldo e dias de atraso calculados sozinhos</li>
+    </ul>
+    <div class="dots">
+      <span class="d v"></span><span style="font-size:14px;color:#334155">Bom pagador</span>
+      <span class="d a" style="margin-left:8px"></span><span style="font-size:14px;color:#334155">Atenção</span>
+      <span class="d r" style="margin-left:8px"></span><span style="font-size:14px;color:#334155">Inadimplente</span>
+    </div>
+    <p class="tagline">O semáforo mostra na hora o perfil de cada cliente.</p>
+  </section>
+
+  <!-- 4 — MENSAGEM -->
+  <section class="slide">
+    <span class="kicker">O diferencial</span>
+    <h2>Mensagem de cobrança pronta</h2>
+    <p>Um toque e o app escreve a mensagem com os valores, vencimentos e o tom certo para aquele cliente:</p>
+    <div class="quote">
+      <em>“Oi João, tudo bem? 😊 Aqui é da Construbom. Passando pra lembrar do seu saldo: Cimento (venc. 05/06): R$ 220,00. Total em aberto: R$ 412,00. Quando puder dar um jeitinho a gente agradece! 🙏”</em>
+    </div>
+    <p><b>Copiar</b> ou abrir direto no <b>WhatsApp</b> — sem digitar nada.</p>
+    <p class="tagline">Cobrança humana e dentro da lei (respeita o Código de Defesa do Consumidor).</p>
+  </section>
+
+  <!-- 5 — VISIBILIDADE -->
+  <section class="slide">
+    <span class="kicker">Visibilidade</span>
+    <h2>O universo financeiro num relance</h2>
+    <div class="grid">
+      <div class="tile"><div class="big">R$</div><div class="lbl">Total a receber</div></div>
+      <div class="tile"><div class="big" style="color:var(--vermelho)">!</div><div class="lbl">Total em atraso</div></div>
+      <div class="tile"><div class="big">👥</div><div class="lbl">Clientes por cor</div></div>
+      <div class="tile"><div class="big">📅</div><div class="lbl">Cobrar hoje / na semana</div></div>
+    </div>
+    <p style="margin-top:14px">A <b>Agenda</b> diz quem cobrar e quando, seguindo a preferência de cada cliente. Nada cai no esquecimento.</p>
+  </section>
+
+  <!-- 6 — STATUS / LINK / PRÓXIMOS PASSOS -->
+  <section class="slide">
+    <span class="kicker">Onde estamos</span>
+    <h2>Versão 1.0 — pronta para testar</h2>
+    <ul>
+      <li class="check">App no ar, com <b>20 clientes de teste</b></li>
+      <li class="check">Fichas, semáforo, agenda e mensagens funcionando</li>
+      <li class="check">Identidade visual da Rede Construbom</li>
+    </ul>
+    <a class="cta" href="https://vilkers.github.io/cobrador-construbom/" target="_blank">Abrir o app ▸</a>
+    <p style="margin-top:16px;font-weight:700;color:#0f172a">Próximos passos</p>
+    <div>
+      <span class="pill">Validar com a usuária</span>
+      <span class="pill">Banco de dados (multi-dispositivo)</span>
+      <span class="pill">Cadastrar clientes reais</span>
+      <span class="pill">Histórico de cobranças</span>
+    </div>
+  </section>
+
+</div>
+
+<div class="nav">
+  <button id="prev" aria-label="Anterior">‹</button>
+  <span class="counter" id="counter">1 / 6</span>
+  <button id="next" aria-label="Próximo">›</button>
+</div>
+
+<script>
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0;
+  const bar=document.getElementById('bar');
+  const counter=document.getElementById('counter');
+  function show(n){
+    i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    bar.style.width=((i+1)/slides.length*100)+'%';
+    counter.textContent=(i+1)+' / '+slides.length;
+    document.querySelector('.hint').style.opacity = i===0?1:0;
+  }
+  document.getElementById('next').onclick=()=>show(i+1);
+  document.getElementById('prev').onclick=()=>show(i-1);
+  document.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'||e.key===' ')show(i+1);
+    if(e.key==='ArrowLeft')show(i-1);
+  });
+  let x0=null;
+  document.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+  document.addEventListener('touchend',e=>{
+    if(x0===null)return;
+    const dx=e.changedTouches[0].clientX-x0;
+    if(Math.abs(dx)>45){ dx<0?show(i+1):show(i-1); }
+    x0=null;
+  },{passive:true});
+  show(0);
+</script>
+</body>
+</html>
