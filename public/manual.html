@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Manual — Cobrança Construbom</title>
+<style>
+  :root{--brand:#0A4C9E;--brand-dark:#07347A;--accent:#F5B700;--verde:#16A34A;--amarelo:#F59E0B;--vermelho:#DC2626;--ink:#0f172a;--muted:#64748b;--bg:#f1f5f9}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+  header{background:linear-gradient(160deg,#07347A,#0A4C9E);color:#fff;padding:26px 20px 22px;position:sticky;top:0;z-index:5;box-shadow:0 4px 14px rgba(7,52,122,.25)}
+  .logo{display:flex;align-items:center;gap:12px}
+  .mark{width:44px;height:44px;border-radius:12px;background:#fff;color:var(--brand);font-weight:900;font-size:23px;display:flex;align-items:center;justify-content:center}
+  header b{font-size:18px;display:block}
+  header small{color:#cfe0ff;font-size:13px}
+  .wrap{max-width:640px;margin:0 auto;padding:18px 16px 60px}
+  .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;padding:20px;margin-bottom:14px;box-shadow:0 1px 3px rgba(15,23,42,.06)}
+  h2{font-size:19px;color:var(--brand);margin-bottom:10px;display:flex;align-items:center;gap:9px}
+  h3{font-size:16px;color:var(--ink);margin:14px 0 6px}
+  p{font-size:15.5px;color:#334155;margin-bottom:10px}
+  .lead{font-size:16px;color:#1e293b}
+  ol,ul{margin:8px 0 8px 4px;padding-left:20px}
+  li{font-size:15.5px;color:#334155;margin-bottom:8px}
+  .step{display:flex;gap:12px;margin-bottom:12px;align-items:flex-start}
+  .num{flex:0 0 28px;height:28px;border-radius:50%;background:var(--accent);color:var(--brand-dark);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px;margin-top:1px}
+  .step div{font-size:15.5px;color:#334155}
+  .step b{color:var(--ink)}
+  .semaforo{display:flex;flex-direction:column;gap:8px;margin-top:6px}
+  .sem{display:flex;align-items:center;gap:10px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:10px 12px;font-size:15px;color:#334155}
+  .dot{width:14px;height:14px;border-radius:50%;flex:0 0 14px}
+  .dv{background:var(--verde)}.da{background:var(--amarelo)}.dr{background:var(--vermelho)}.dg{background:#6b7280}
+  .cta{display:block;text-align:center;background:var(--accent);color:var(--brand-dark);font-weight:800;text-decoration:none;padding:15px;border-radius:14px;font-size:16px;margin:4px 0}
+  .tip{background:#eff6ff;border-left:4px solid var(--brand);border-radius:10px;padding:12px 14px;font-size:14.5px;color:#1e3a5f;margin:10px 0}
+  .warn{background:#fffbeb;border-left:4px solid var(--accent);border-radius:10px;padding:12px 14px;font-size:14.5px;color:#7c5e00;margin:10px 0}
+  .toc a{color:var(--brand);text-decoration:none;font-weight:600;font-size:15px;display:block;padding:7px 0;border-bottom:1px solid #f1f5f9}
+  .toc a:last-child{border-bottom:0}
+  footer{text-align:center;color:var(--muted);font-size:13px;padding:10px}
+</style>
+</head>
+<body>
+<header>
+  <div class="logo"><div class="mark">C</div><div><b>Cobrança Construbom</b><small>Manual de uso — versão de testes</small></div></div>
+</header>
+<div class="wrap">
+
+  <div class="card">
+    <p class="lead">Este app é um <b>assistente de cobranças</b> da loja. Ele organiza cada cliente que compra fiado, mostra quem está devendo e <b>escreve a mensagem de cobrança pronta</b> pra mandar no WhatsApp. Tudo pelo celular.</p>
+    <a class="cta" href="https://vilkers.github.io/cobrador-construbom/" target="_blank">▶ Abrir o aplicativo</a>
+    <div class="tip">💡 Dica: abra o link acima e, no menu do navegador, toque em <b>“Adicionar à tela de início”</b>. Aí ele vira um ícone no celular, como um app.</div>
+  </div>
+
+  <div class="card toc">
+    <h2>📑 O que tem neste manual</h2>
+    <a href="#telas">1. As 4 telas do app</a>
+    <a href="#cobrar">2. Como cobrar um cliente (passo a passo)</a>
+    <a href="#semaforo">3. As cores dos clientes (semáforo)</a>
+    <a href="#pagamento">4. Registrar um pagamento</a>
+    <a href="#teste">5. Importante: é uma versão de teste</a>
+  </div>
+
+  <div class="card" id="telas">
+    <h2>1️⃣ As 4 telas do app</h2>
+    <h3>🏠 Início</h3>
+    <p>O resumo da loja: <b>quanto há pra receber</b>, <b>quanto está atrasado</b>, quantos clientes em cada cor e <b>quem cobrar hoje</b>.</p>
+    <h3>📇 Fichas</h3>
+    <p>A lista de todos os clientes. Dá pra <b>buscar pelo nome</b> e <b>filtrar pela cor</b> (quem paga bem, quem enrola). Cada cliente é uma ficha.</p>
+    <h3>👤 Ficha do cliente</h3>
+    <p>Toque num cliente para ver tudo: telefone, <b>como cobrar ele</b> (dia, jeito e tom), as compras/dívidas e o botão para <b>gerar a mensagem de cobrança</b>.</p>
+    <h3>📅 Agenda</h3>
+    <p>Mostra <b>quem cobrar hoje e nesta semana</b>, seguindo a preferência de cada cliente. Nada cai no esquecimento.</p>
+  </div>
+
+  <div class="card" id="cobrar">
+    <h2>2️⃣ Como cobrar um cliente</h2>
+    <div class="step"><div class="num">1</div><div>Abra <b>Fichas</b> (ou veja em <b>Início → Para cobrar hoje</b>).</div></div>
+    <div class="step"><div class="num">2</div><div>Toque no <b>nome do cliente</b> para abrir a ficha.</div></div>
+    <div class="step"><div class="num">3</div><div>Toque no botão amarelo <b>“Gerar mensagem de cobrança”</b>.</div></div>
+    <div class="step"><div class="num">4</div><div>Escolha o <b>tom</b>: amigável, lembrete ou firme. O texto já vem pronto com os valores e vencimentos.</div></div>
+    <div class="step"><div class="num">5</div><div>Toque em <b>Copiar</b> ou direto no botão verde <b>WhatsApp</b> — abre a conversa já com a mensagem escrita. É só enviar.</div></div>
+    <div class="tip">✅ Você não digita nada. O app monta a mensagem certinha pra cada cliente.</div>
+  </div>
+
+  <div class="card" id="semaforo">
+    <h2>3️⃣ As cores dos clientes</h2>
+    <p>Cada cliente tem uma cor que mostra o perfil de pagamento. Você bate o olho e já sabe:</p>
+    <div class="semaforo">
+      <div class="sem"><span class="dot dv"></span><div><b>Verde</b> — bom pagador, paga em dia</div></div>
+      <div class="sem"><span class="dot da"></span><div><b>Amarelo</b> — atenção, às vezes atrasa</div></div>
+      <div class="sem"><span class="dot dr"></span><div><b>Vermelho</b> — enrola / está inadimplente</div></div>
+      <div class="sem"><span class="dot dg"></span><div><b>Cinza</b> — já quitou tudo / inativo</div></div>
+    </div>
+    <p style="margin-top:10px">Para mudar a cor de um cliente, abra a ficha dele e toque na cor desejada em <b>“Classificar cliente”</b>.</p>
+  </div>
+
+  <div class="card" id="pagamento">
+    <h2>4️⃣ Registrar um pagamento</h2>
+    <div class="step"><div class="num">1</div><div>Abra a <b>ficha do cliente</b> e desça até <b>“Compras / dívidas”</b>.</div></div>
+    <div class="step"><div class="num">2</div><div>Na compra que ele pagou, toque em <b>“Registrar pagamento”</b>.</div></div>
+    <div class="step"><div class="num">3</div><div>Digite o <b>valor recebido</b> e toque em <b>Salvar</b>.</div></div>
+    <p>O app atualiza sozinho o saldo. Quando a dívida zera, a compra vira <b>“Pago”</b>.</p>
+  </div>
+
+  <div class="card" id="teste">
+    <h2>5️⃣ Importante: é uma versão de teste</h2>
+    <p>O app já vem com <b>20 clientes de exemplo</b> só pra você experimentar à vontade, sem medo de estragar nada.</p>
+    <div class="warn">⚠️ Nesta versão, as informações ficam guardadas <b>só neste celular/navegador</b>. Cada aparelho tem seus próprios dados. Na próxima fase, colocamos um banco de dados para os dados ficarem salvos e compartilhados entre os aparelhos.</div>
+    <p>Quer recomeçar do zero? Na tela <b>Início</b>, lá embaixo, toque em <b>“Restaurar base de teste”</b>.</p>
+  </div>
+
+  <a class="cta" href="https://vilkers.github.io/cobrador-construbom/" target="_blank">▶ Abrir o aplicativo agora</a>
+  <footer>Cobrança Construbom · feito para a rede Construbom 💙</footer>
+</div>
+</body>
+</html>

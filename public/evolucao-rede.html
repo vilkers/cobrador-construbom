@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>5 perspectivas de evolução para a rede | Cobrança Construbom</title>
+<style>
+  :root{--brand:#0A4C9E;--brand-dark:#07347A;--accent:#F5B700;--verde:#16A34A;--ink:#0f172a;--muted:#64748b}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(160deg,#07347A,#0A4C9E 55%,#0b1f3a);color:var(--ink);overflow:hidden}
+  .deck{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:18px}
+  .slide{display:none;width:100%;max-width:580px;max-height:100%;overflow-y:auto;background:#fff;border-radius:22px;padding:30px 26px 34px;box-shadow:0 24px 60px rgba(0,0,0,.35);animation:in .35s ease}
+  .slide.active{display:block}
+  @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);background:#eef5ff;padding:6px 12px;border-radius:999px;margin-bottom:14px}
+  .kicker.green{color:var(--verde);background:#dcfce7}
+  h1{font-size:27px;line-height:1.16;margin-bottom:12px}
+  h2{font-size:22px;line-height:1.22;margin-bottom:12px}
+  p{font-size:16px;line-height:1.55;color:#334155;margin-bottom:12px}
+  .lead{font-size:17px;color:#1e293b}
+  ul{list-style:none;margin:8px 0 4px}
+  li{font-size:15.5px;line-height:1.5;color:#334155;padding:9px 0 9px 28px;position:relative;border-bottom:1px solid #f1f5f9}
+  li:last-child{border-bottom:0}
+  li::before{content:"";position:absolute;left:3px;top:15px;width:9px;height:9px;border-radius:3px;background:var(--accent)}
+  li.c::before{content:"✓";background:none;color:var(--verde);font-weight:900;left:2px;top:7px;font-size:16px}
+  .logo{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+  .mark{width:46px;height:46px;border-radius:13px;background:var(--brand);color:var(--accent);font-weight:900;font-size:24px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(10,76,158,.4)}
+  .logo small{display:block;color:var(--muted);font-size:12px;font-weight:600}.logo b{font-size:16px}
+  .numbig{display:flex;align-items:center;gap:14px;margin-bottom:8px}
+  .nb{flex:0 0 56px;height:56px;border-radius:16px;background:linear-gradient(150deg,#0A4C9E,#07347A);color:var(--accent);font-weight:900;font-size:28px;display:flex;align-items:center;justify-content:center}
+  .ph{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+  .benefit{background:#ecfdf5;border-left:4px solid var(--verde);border-radius:12px;padding:12px 14px;font-size:14.5px;color:#065f46;margin-top:10px}
+  .benefit b{color:#064e3b}
+  .roadbar{display:flex;gap:6px;margin-top:16px}
+  .rb{flex:1;height:7px;border-radius:4px;background:#e2e8f0}.rb.on{background:var(--accent)}
+  .cta{display:block;text-align:center;background:var(--accent);color:var(--brand-dark);font-weight:800;text-decoration:none;padding:14px;border-radius:14px;margin-top:12px;font-size:16px}
+  .pill{display:inline-block;background:#eef5ff;color:var(--brand);font-weight:700;font-size:13px;padding:6px 12px;border-radius:999px;margin:3px 4px 0 0}
+  .nav{position:fixed;left:0;right:0;bottom:14px;display:flex;align-items:center;justify-content:center;gap:14px;z-index:10}
+  .nav button{border:0;background:rgba(255,255,255,.16);color:#fff;width:46px;height:46px;border-radius:50%;font-size:20px;backdrop-filter:blur(6px)}
+  .nav button:active{background:rgba(255,255,255,.3)}
+  .counter{color:#cbd5e1;font-size:13px;font-weight:600;min-width:54px;text-align:center}
+  .progress{position:fixed;top:0;left:0;height:4px;background:var(--accent);transition:width .3s;z-index:11}
+  .hint{position:fixed;top:12px;right:14px;color:rgba(255,255,255,.55);font-size:12px;z-index:10}
+</style>
+</head>
+<body>
+<div class="progress" id="bar"></div>
+<div class="hint">deslize ou use as setas →</div>
+<div class="deck" id="deck">
+
+  <section class="slide active">
+    <div class="logo"><div class="mark">C</div><div><b>Cobrança Construbom</b><small>Visão de futuro · Rede Construbom</small></div></div>
+    <span class="kicker">Roadmap</span>
+    <h1>5 perspectivas de evolução para as lojas da rede</h1>
+    <p class="lead">Como o app pode crescer de uma loja para <b>toda a rede da Grande Vitória</b> — virando uma vantagem competitiva coletiva.</p>
+    <p class="src" style="font-size:11.5px;color:#94a3b8;margin-top:14px">Hoje: versão 1.0 em teste, numa loja. A seguir, os passos para escalar.</p>
+  </section>
+
+  <section class="slide">
+    <div class="numbig"><div class="nb">1</div><div><div class="ph">Perspectiva 1 · Fundação</div><h2 style="margin:0">Banco de dados central e multiusuário</h2></div></div>
+    <p>Sair do "dados no navegador" para um banco na nuvem, com login por loja.</p>
+    <ul>
+      <li>Cada loja com sua carteira, acessível de qualquer aparelho</li>
+      <li>Vários funcionários usando ao mesmo tempo, com segurança</li>
+      <li>Backup automático — nada se perde</li>
+    </ul>
+    <div class="benefit"><b>Ganho:</b> base sólida e confiável para escalar para várias lojas.</div>
+    <div class="roadbar"><span class="rb on"></span><span class="rb"></span><span class="rb"></span><span class="rb"></span><span class="rb"></span></div>
+  </section>
+
+  <section class="slide">
+    <div class="numbig"><div class="nb">2</div><div><div class="ph">Perspectiva 2 · Gestão da rede</div><h2 style="margin:0">Painel da rede (visão consolidada)</h2></div></div>
+    <p>Um painel para a rede enxergar todas as lojas num lugar só.</p>
+    <ul>
+      <li>Total a receber e inadimplência <b>por loja</b> e da rede inteira</li>
+      <li>Comparativo (benchmark): quais lojas cobram melhor</li>
+      <li>Relatórios e exportação para a gestão</li>
+    </ul>
+    <div class="benefit"><b>Ganho:</b> decisões com dados — a rede sabe onde está o dinheiro parado.</div>
+    <div class="roadbar"><span class="rb on"></span><span class="rb on"></span><span class="rb"></span><span class="rb"></span><span class="rb"></span></div>
+  </section>
+
+  <section class="slide">
+    <div class="numbig"><div class="nb">3</div><div><div class="ph">Perspectiva 3 · Automação</div><h2 style="margin:0">Cobrança automática e histórico</h2></div></div>
+    <p>O app passa a trabalhar sozinho, no horário e tom certos.</p>
+    <ul>
+      <li>Lembretes automáticos (régua de cobrança) via WhatsApp</li>
+      <li>Histórico de cada contato: quem foi cobrado, quando e a resposta</li>
+      <li>Registro de promessas de pagamento e reagendamento</li>
+    </ul>
+    <div class="benefit"><b>Ganho:</b> menos trabalho manual e cobrança que nunca esquece.</div>
+    <div class="roadbar"><span class="rb on"></span><span class="rb on"></span><span class="rb on"></span><span class="rb"></span><span class="rb"></span></div>
+  </section>
+
+  <section class="slide">
+    <div class="numbig"><div class="nb">4</div><div><div class="ph">Perspectiva 4 · Inteligência</div><h2 style="margin:0">Score de crédito compartilhado + IA</h2></div></div>
+    <p>O semáforo do cliente "viaja" entre as lojas da rede.</p>
+    <ul>
+      <li>Histórico de pagamento compartilhado (com consentimento)</li>
+      <li>Alerta de risco antes de vender fiado para quem já enrolou</li>
+      <li>IA prevendo inadimplência e sugerindo o melhor tom/abordagem</li>
+    </ul>
+    <div class="benefit"><b>Ganho:</b> vender a prazo com muito mais segurança em toda a rede.</div>
+    <div class="roadbar"><span class="rb on"></span><span class="rb on"></span><span class="rb on"></span><span class="rb on"></span><span class="rb"></span></div>
+  </section>
+
+  <section class="slide">
+    <div class="numbig"><div class="nb">5</div><div><div class="ph">Perspectiva 5 · Ecossistema</div><h2 style="margin:0">Pagamento e integração com o caixa</h2></div></div>
+    <p>Fechar o ciclo: cobrar, receber e baixar automaticamente.</p>
+    <ul>
+      <li>Pix e link de pagamento dentro da própria cobrança</li>
+      <li>Carnê digital e autoatendimento para o cliente</li>
+      <li>Integração com o PDV/sistema da loja (baixa automática)</li>
+    </ul>
+    <div class="benefit"><b>Ganho:</b> o dinheiro entra mais rápido e sem retrabalho.</div>
+    <div class="roadbar"><span class="rb on"></span><span class="rb on"></span><span class="rb on"></span><span class="rb on"></span><span class="rb on"></span></div>
+  </section>
+
+  <section class="slide">
+    <span class="kicker green">Para onde vamos</span>
+    <h2>De uma loja para a rede inteira</h2>
+    <p>Começamos provando numa loja. Cada perspectiva acima multiplica o ganho quando vira <b>padrão da rede</b> na Grande Vitória.</p>
+    <div style="margin:6px 0 4px">
+      <span class="pill">1 · Banco central</span>
+      <span class="pill">2 · Painel da rede</span>
+      <span class="pill">3 · Automação</span>
+      <span class="pill">4 · Score + IA</span>
+      <span class="pill">5 · Pagamento</span>
+    </div>
+    <a class="cta" href="https://vilkers.github.io/cobrador-construbom/" target="_blank">Ver o app hoje ▸</a>
+  </section>
+
+</div>
+<div class="nav"><button id="prev">‹</button><span class="counter" id="counter">1 / 7</span><button id="next">›</button></div>
+<script>
+  const slides=[...document.querySelectorAll('.slide')];let i=0;
+  const bar=document.getElementById('bar'),counter=document.getElementById('counter');
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    bar.style.width=((i+1)/slides.length*100)+'%';counter.textContent=(i+1)+' / '+slides.length;document.querySelector('.hint').style.opacity=i===0?1:0;}
+  document.getElementById('next').onclick=()=>show(i+1);document.getElementById('prev').onclick=()=>show(i-1);
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')show(i+1);if(e.key==='ArrowLeft')show(i-1);});
+  let x0=null;document.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+  document.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>45){dx<0?show(i+1):show(i-1);}x0=null;},{passive:true});
+  show(0);
+</script>
+</body>
+</html>

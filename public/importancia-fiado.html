@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>A importância de resolver o fiado na Grande Vitória | Cobrança Construbom</title>
+<style>
+  :root{--brand:#0A4C9E;--brand-dark:#07347A;--accent:#F5B700;--verde:#16A34A;--amarelo:#F59E0B;--vermelho:#DC2626;--ink:#0f172a;--muted:#64748b}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(160deg,#07347A,#0A4C9E 55%,#0b1f3a);color:var(--ink);overflow:hidden}
+  .deck{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;padding:18px}
+  .slide{display:none;width:100%;max-width:580px;max-height:100%;overflow-y:auto;background:#fff;border-radius:22px;padding:30px 26px 34px;box-shadow:0 24px 60px rgba(0,0,0,.35);animation:in .35s ease}
+  .slide.active{display:block}
+  @keyframes in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+  .kicker{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--brand);background:#eef5ff;padding:6px 12px;border-radius:999px;margin-bottom:14px}
+  .kicker.green{color:var(--verde);background:#dcfce7}
+  h1{font-size:27px;line-height:1.16;margin-bottom:12px}
+  h2{font-size:23px;line-height:1.2;margin-bottom:14px}
+  p{font-size:16px;line-height:1.55;color:#334155;margin-bottom:12px}
+  .lead{font-size:17px;color:#1e293b}
+  .src{font-size:11.5px;color:#94a3b8;margin-top:14px;line-height:1.4}
+  ul{list-style:none;margin:8px 0 4px}
+  li{font-size:15.5px;line-height:1.5;color:#334155;padding:9px 0 9px 28px;position:relative;border-bottom:1px solid #f1f5f9}
+  li:last-child{border-bottom:0}
+  li::before{content:"";position:absolute;left:3px;top:15px;width:9px;height:9px;border-radius:3px;background:var(--accent)}
+  li.c::before{content:"✓";background:none;color:var(--verde);font-weight:900;left:2px;top:7px;font-size:16px}
+  .logo{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+  .mark{width:46px;height:46px;border-radius:13px;background:var(--brand);color:var(--accent);font-weight:900;font-size:24px;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(10,76,158,.4)}
+  .logo small{display:block;color:var(--muted);font-size:12px;font-weight:600}.logo b{font-size:16px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+  .tile{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:14px}
+  .tile .big{font-size:23px;font-weight:800;color:var(--brand);line-height:1.1}.tile .big.green{color:var(--verde)}
+  .tile .lbl{font-size:12.5px;color:var(--muted);margin-top:4px;line-height:1.3}
+  .quote{background:#fff7ed;border-left:4px solid var(--accent);border-radius:14px;padding:16px;margin:6px 0 14px;font-size:15.5px;color:#7c2d12;line-height:1.5}
+  .flow{background:#f8fafc;border:1px solid #e2e8f0;border-radius:14px;padding:13px 16px;margin:6px 0 10px;font-size:15px;color:#334155}.flow b{color:var(--brand)}
+  .cta{display:block;text-align:center;background:var(--accent);color:var(--brand-dark);font-weight:800;text-decoration:none;padding:14px;border-radius:14px;margin-top:12px;font-size:16px}
+  .nav{position:fixed;left:0;right:0;bottom:14px;display:flex;align-items:center;justify-content:center;gap:14px;z-index:10}
+  .nav button{border:0;background:rgba(255,255,255,.16);color:#fff;width:46px;height:46px;border-radius:50%;font-size:20px;backdrop-filter:blur(6px)}
+  .nav button:active{background:rgba(255,255,255,.3)}
+  .counter{color:#cbd5e1;font-size:13px;font-weight:600;min-width:54px;text-align:center}
+  .progress{position:fixed;top:0;left:0;height:4px;background:var(--accent);transition:width .3s;z-index:11}
+  .hint{position:fixed;top:12px;right:14px;color:rgba(255,255,255,.55);font-size:12px;z-index:10}
+</style>
+</head>
+<body>
+<div class="progress" id="bar"></div>
+<div class="hint">deslize ou use as setas →</div>
+<div class="deck" id="deck">
+
+  <section class="slide active">
+    <div class="logo"><div class="mark">C</div><div><b>Cobrança Construbom</b><small>Grande Vitória/ES</small></div></div>
+    <span class="kicker">Economia de bairro</span>
+    <h1>O fiado move o bairro — mas precisa de organização</h1>
+    <p class="lead">Por que resolver a venda fiada é importante para a loja, para o cliente e para a economia local da Grande Vitória.</p>
+    <p class="src">Material informativo · dados de mercado 2025–2026 (fontes ao final). Exemplos de loja são ilustrativos.</p>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">O papel do fiado</span>
+    <h2>Na loja de bairro, vender a prazo é confiança</h2>
+    <p>O pedreiro, o autônomo e a família que está reformando contam com o fiado para tocar a obra. Para a loja, é o que <b>fideliza e gira o estoque</b>.</p>
+    <ul>
+      <li>Mantém a obra andando mesmo quando o dinheiro entra parcelado</li>
+      <li>Cria relação de longo prazo entre loja e comunidade</li>
+      <li>É a vantagem da loja de bairro frente às grandes redes</li>
+    </ul>
+    <div class="quote">O fiado é uma <b>ferramenta de crescimento</b> — desde que a loja saiba quem está devendo e quando cobrar.</div>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">Contexto regional</span>
+    <h2>Um setor forte no Espírito Santo</h2>
+    <div class="grid">
+      <div class="tile"><div class="big">~158 mil</div><div class="lbl">lojas de material de construção no Brasil</div></div>
+      <div class="tile"><div class="big green">+2,5%</div><div class="lbl">crescimento do varejo de construção em 2025</div></div>
+      <div class="tile"><div class="big">ES</div><div class="lbl">impulsionado pelo aquecimento da construção civil</div></div>
+      <div class="tile"><div class="big">Rede</div><div class="lbl">associativismo forte (Construbom, Acomac-ES)</div></div>
+    </div>
+    <p style="margin-top:14px">Na Grande Vitória, dezenas de lojas de bairro sustentam obras, empregos e o comércio local — e quase todas vendem no fiado.</p>
+    <p class="src">Fontes: Instituto de Pesquisas Anamaco; setor de construção/ES (2025).</p>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">O problema</span>
+    <h2>Fiado sem controle vira dinheiro parado</h2>
+    <p>Quando o fiado é anotado só no caderno ou na memória, a loja perde o rastro:</p>
+    <ul>
+      <li>Não se sabe <b>quem está atrasado hoje</b></li>
+      <li>A cobrança fica no improviso e atrasa</li>
+      <li>O <b>capital de giro</b> não volta — falta dinheiro pra repor estoque</li>
+    </ul>
+    <p>A inadimplência do varejo voltou a subir (~<b>8,5%</b> no início de 2026), e o <b>Sudeste</b> está entre as regiões de maior índice (~<b>10,4%</b>).</p>
+    <p class="src">Fontes: CNDL/SPC Brasil; Índice de Inadimplência do Varejo (Meu Crediário), 2025–2026.</p>
+  </section>
+
+  <section class="slide">
+    <span class="kicker">Por que importa pra região</span>
+    <h2>Resolver o fiado fortalece o bairro inteiro</h2>
+    <ul>
+      <li class="c"><b>Loja</b> mais saudável: caixa girando, menos perda, mais compra de estoque</li>
+      <li class="c"><b>Cliente</b> bem tratado: cobrança organizada e respeitosa fideliza</li>
+      <li class="c"><b>Bairro</b>: loja forte = obras tocando, empregos e comércio local girando</li>
+      <li class="c"><b>Rede</b>: lojas organizadas = marca mais confiável na Grande Vitória</li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <span class="kicker green">A solução</span>
+    <h2>Como o app ajuda — em resumo</h2>
+    <div class="flow">📇 <b>Ficha por cliente</b> — cada um com seu dia, jeito e tom de cobrar</div>
+    <div class="flow">🚦 <b>Semáforo</b> — verde paga bem, amarelo atrasa, vermelho enrola</div>
+    <div class="flow">📅 <b>Agenda</b> — o app avisa <b>quem cobrar hoje</b></div>
+    <div class="flow">💬 <b>Mensagem pronta</b> — copia ou manda no WhatsApp num toque</div>
+    <div class="flow">📊 <b>Visão geral</b> — total a receber e atrasado na hora</div>
+  </section>
+
+  <section class="slide">
+    <span class="kicker green">O resultado</span>
+    <h2>Do caderninho ao dinheiro de volta no caixa</h2>
+    <p>Com a cobrança certa, na hora certa e no tom certo, parte do que está parado <b>volta para a loja</b> — sem desgastar a relação com o cliente.</p>
+    <ul>
+      <li class="c">Recupera inadimplência que hoje fica esquecida</li>
+      <li class="c">Devolve capital de giro para comprar mais estoque</li>
+      <li class="c">Economiza tempo: cobrança em minutos, não em horas</li>
+      <li class="c">Permite <b>vender mais a prazo com segurança</b></li>
+    </ul>
+    <a class="cta" href="https://vilkers.github.io/cobrador-construbom/" target="_blank">Conhecer o app ▸</a>
+    <p class="src" style="margin-top:14px">Fontes: Anamaco; CNDL/SPC Brasil; Índice de Inadimplência do Varejo (Meu Crediário), 2025–2026. Números de loja são ilustrativos.</p>
+  </section>
+
+</div>
+<div class="nav"><button id="prev">‹</button><span class="counter" id="counter">1 / 7</span><button id="next">›</button></div>
+<script>
+  const slides=[...document.querySelectorAll('.slide')];let i=0;
+  const bar=document.getElementById('bar'),counter=document.getElementById('counter');
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));slides.forEach((s,k)=>s.classList.toggle('active',k===i));
+    bar.style.width=((i+1)/slides.length*100)+'%';counter.textContent=(i+1)+' / '+slides.length;document.querySelector('.hint').style.opacity=i===0?1:0;}
+  document.getElementById('next').onclick=()=>show(i+1);document.getElementById('prev').onclick=()=>show(i-1);
+  document.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key===' ')show(i+1);if(e.key==='ArrowLeft')show(i-1);});
+  let x0=null;document.addEventListener('touchstart',e=>x0=e.touches[0].clientX,{passive:true});
+  document.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>45){dx<0?show(i+1):show(i-1);}x0=null;},{passive:true});
+  show(0);
+</script>
+</body>
+</html>
